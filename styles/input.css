@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Nav Menu */
+.nav-menu {
+  @apply p-4 lg:-mt-1 hover:bg-[#beccbe] lg:hover:bg-transparent lg:hover:text-green-500 font-medium;
+}
+
+.hover-underline {
+  @apply hover:underline hover:underline-offset-2;
+}
+
+.button-mode {
+  @apply bg-forestGreen text-white px-6 py-2 rounded-full text-base active:scale-95;
+}
+
+.button-mode-lg {
+  @apply lg:bg-forestGreen lg:text-white lg:px-6 lg:py-2 lg:rounded-full lg:text-base lg:active:scale-95;
+}

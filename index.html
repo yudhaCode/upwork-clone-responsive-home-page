@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="styles/custom.css" />
+    <!-- tailwind CSS -->
+    <link rel="stylesheet" href="styles/output.css" />
+    <title>Sign In</title>
+  </head>
+  <body class="overflow-x-hidden lg:max-w-screen-2xl mx-auto">
+    <!-- header -->
+    <header class="bg-white mx-auto fixed w-full top-0 z-50">
+      <div
+        id="headerInner"
+        class="flex justify-between items-center px-3 py-4 md:px-6 shadow"
+      >
+        <!-- left component -->
+        <div class="flex items-center gap-x-4">
+          <!-- Menu Icon (Hamburger Menu) -->
+          <button id="hamburger" type="button" class="hamburger ml-2 lg:hidden">
+            <span class="hamburger__line"></span>
+          </button>
+
+          <!-- Company Logo -->
+          <a href="/" id="company-logo" aria-label="Company Logo">
+            <img src="assets/upwork-logo.svg" alt="upwork-logo" class="w-20" />
+          </a>
+
+          <nav
+            id="nav-menu-aside"
+            class="absolute lg:static inline-block w-full lg:h-auto top-14 left-0 transform -translate-x-full lg:translate-x-0 transition-transform duration- lg:transition-none ease-in-out bg-white"
+          >
+            <ul
+              class="flex flex-col lg:flex-row gap-3 h-screen lg:h-auto overflow-y-scroll lg:overflow-auto"
+            >
+              <li class="nav-menu">
+                <a href="#">Find Talent</a>
+              </li>
+              <li>
+                <button
+                  class="flex w-full justify-between items-center nav-menu dropdown-navbar"
+                >
+                  Find Work
+                  <img
+                    id="nav-chevron"
+                    src="assets/chevron-down-svgrepo-com.svg"
+                    class="w-auto h-3 lg:ml-2 transform"
+                    alt="chevron-down"
+                  />
+                </button>
+
+                <!-- Dropdown menu -->
+                <div
+                  id="dropdown-navbar-content"
+                  class="hidden bg-white lg:max-w-screen-2xl lg:absolute lg:w-screen lg:px-11 lg:py-20 lg:left-[-18%] lg:top-[4.2rem] lg:shadow"
+                >
+                  <ul
+                    aria-labelledby="dropdownLargeButton"
+                    class="flex flex-col px-8 py-2 gap-3 lg:flex-row lg:justify-between"
+                  >
+                    <li>
+                      <a href="#" class="font-medium">Ways to earn</a>
+                    </li>
+                    <li>
+                      <a href="#" class="font-medium"
+                        >Find work for your skills</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="font-medium">Win work with ads</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button
+                  class="flex w-full justify-between items-center nav-menu dropdown-navbar"
+                >
+                  Why Upwork
+                  <img
+                    id="nav-chevron"
+                    src="assets/chevron-down-svgrepo-com.svg"
+                    class="w-auto h-3 lg:ml-2 transform"
+                    alt="chevron-down"
+                  />
+                </button>
+
+                <!-- Dropdown menu -->
+                <div
+                  id="dropdown-navbar-content"
+                  class="hidden bg-white lg:max-w-screen-2xl lg:absolute lg:w-screen lg:px-11 lg:py-20 lg:left-[-18%] lg:top-[4.2rem] lg:shadow"
+                >
+                  <ul
+                    aria-labelledby="dropdownLargeButton"
+                    class="flex flex-col px-8 py-2 gap-3 lg:flex-row lg:justify-between"
+                  >
+                    <li>
+                      <a href="#" class="font-medium">Success Stories</a>
+                    </li>
+                    <li>
+                      <a href="#" class="font-medium">Reviews</a>
+                    </li>
+                    <li>
+                      <a href="#" class="font-medium">How to hire</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <button
+                  class="flex w-full justify-between items-center nav-menu dropdown-navbar"
+                >
+                  Enterprise
+                </button>
+              </li>
+              <li class="lg:hidden">
+                <a href="#" class="nav-menu">Log in</a>
+              </li>
+            </ul>
+
+            <div
+              class="absolute z-50 bg-white w-full bottom-[8%] px-4 py-6 box-shadow-cstm lg:hidden"
+            >
+              <button
+                id="signUpBtn"
+                class="bg-darkForestGreen transition ease-in-out delay-150 hover:bg-forestGreen text-white font-medium px-6 py-2 rounded-full w-full"
+              >
+                Sign Up
+              </button>
+            </div>
+          </nav>
+        </div>
+
+        <!-- right component -->
+        <div class="flex items-center lg:flex-row-reverse lg:gap-8">
+          <!-- Login Sign Up Links -->
+
+          <div class="flex items-center">
+            <a
+              href="#login"
+              id="loginLink"
+              aria-label="Login"
+              class="mr-3 text-sm hidden lg:block"
+              >Log in</a
+            >
+
+            <a
+              href="#signUp"
+              id="signUpLink"
+              aria-label="Sign Up"
+              class="mr-3 text-sm button-mode-lg"
+              >Sign Up</a
+            >
+          </div>
+
+          <!-- Search Icon and Form -->
+          <div id="search-container">
+            <button id="btn-search-aside" aria-label="Open Search">
+              <!-- Your search icon SVG or font icon goes here -->
+              <img
+                src="assets/find-magnifier-magnifying-glass-svgrepo-com.svg"
+                alt="search icon"
+                class="w-5 scale-x-[-1] relative top-1"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Menu aside -->
+      <div
+        id="search-menu-aside"
+        class="absolute z-10 bg-white w-full h-screen p-3 top-0 transform translate-x-full transition-transform duration-300 ease-in-out"
+      >
+        <div class="flex justify-center">
+          <button id="btn-back-aside">
+            <img
+              src="assets/chevron-left-svgrepo-com.svg"
+              class="w-5 mr-2"
+              alt="chevron-right"
+            />
+          </button>
+
+          <div
+            class="flex border-solid border-2 border-[#9aaa97ff] rounded-3xl px-3 py-2"
+          >
+            <button>
+              <img
+                src="assets/find-magnifier-magnifying-glass-svgrepo-com.svg"
+                class="w-4 scale-x-[-1] mr-3"
+                alt="search-icon"
+              />
+            </button>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search"
+              class="border border-none focus:border-none outline-none"
+            />
+          </div>
+        </div>
+
+        <nav class="mt-5 text-xl border-b-2 py-[0.1px]">
+          <ul class="flex gap-5 text-gray-500">
+            <!-- Talent -->
+            <li
+              id="talentItem"
+              class="cursor-pointer hover:border-b-2 hover:border-green-500 border-green-500 hover:text-green-500 transition-all duration-300 pb-2 font-medium"
+            >
+              <a href="#talent">Talent</a>
+            </li>
+
+            <!-- Projects -->
+            <li
+              id="projectsItem"
+              class="cursor-pointer hover:border-b-2 hover:border-green-500 border-green-500 hover:text-green-500 transition-all duration-300 pb-2 font-medium"
+            >
+              <a href="#projects">Projects</a>
+            </li>
+
+            <!-- Jobs -->
+            <li
+              id="jobsItem"
+              class="cursor-pointer hover:border-b-2 hover:border-green-500 border-green-500 hover:text-green-500 transition-all duration-300 pb-2 font-medium"
+            >
+              <a href="#jobs">Jobs</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- main -->
+    <main id="mainSection" class="pt-16">
+      <!-- hero section -->
+      <section
+        id="hero"
+        class="p-3 md:px-8 md:py-8 xl:px-24 lg:py-8 flex justify-between items-start"
+      >
+        <div class="">
+          <div class="max-w-md">
+            <h1 class="text-5xl md:text-7xl font-medium text-forestGreen mb-4">
+              How work should work
+            </h1>
+            <p class="text-xl font-medium text-stoneGray mb-8">
+              Forget the old rules. You can have the best people. Right now.
+              Right here.
+            </p>
+            <button
+              class="bg-darkForestGreen transition ease-in-out delay-150 hover:bg-forestGreen text-white px-6 py-2 rounded-full"
+            >
+              Get Started
+            </button>
+            <div class="mt-12">
+              <p class="text-softStoneGray font-medium">Trusted by</p>
+              <div class="flex gap-3 md:gap-5 mt-3">
+                <img
+                  src="assets/microsoft.svg"
+                  alt="microsoft"
+                  class="w-[114px]"
+                />
+                <img src="assets/airbnb.svg" alt="air bnb" class="w-[90px]" />
+                <img src="assets/bissell.svg" alt="bissell" class="w-[60px]" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="assets/searching-talent@1x.webp"
+            alt="Hero Image"
+            class="max-w-[370px] xl:max-w-[520px]"
+          />
+        </div>
+      </section>
+
+      <!-- chatbot section -->
+      <section
+        id="chatbot"
+        class="p-3 md:px-8 md:py-8 xl:px-24 lg:py-8 md:flex md:flex-col md:items-end"
+      >
+        <div
+          class="chatbot-bg md:rounded-bl-[10rem] px-5 md:px-10 py-8 md:py-16 h-[54vh] md:h-auto xl:w-full relative"
+        >
+          <h2
+            class="text-forestGreenText font-medium text-3xl md:text-6xl xl:text-5xl w-[250px] md:w-auto"
+          >
+            Get instant answers to your Upwork questions
+          </h2>
+
+          <div>
+            <figure
+              class="flex md:flex-col-reverse items-center md:items-baseline mt-4 md:mt-6"
+            >
+              <img
+                src="assets/upwork-cricle.svg"
+                alt="upwork-logo-chat"
+                class="w-16 md:w-36 md:mt-2"
+              />
+              <figcaption
+                class="text-sm text-forestGreenText md:font-medium md:text-xl"
+              >
+                Start a conversation powered by OpenAI technologies
+              </figcaption>
+            </figure>
+
+            <button
+              class="uppercase bg-forestGreenText text-white text-sm font-medium px-3 py-[2px] rounded-full absolute top-8 right-6 md:right-10"
+            >
+              Beta
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="px-4 -mt-20 md:-mt-48 md:mr-6 relative z-10 md:w-[62vw] lg:w-[80%]"
+        >
+          <div
+            class="bg-white shadow-xl px-3 py-5 md:px-10 md:py-12 rounded-xl md:rounded-tl-none text-sm md:text-lg font-medium text-deepForestGreen"
+          >
+            <img
+              src="assets/corner.svg"
+              class="hidden md:block absolute -left-1 top-0"
+              alt=""
+            />
+            <p class="mb-4">
+              Hi 👋 I'm here to help you up your work game with a little help
+              from AI.
+            </p>
+            <p>
+              But first, are you a client hiring for a project? Or a freelancer
+              looking for work? 👀
+            </p>
+
+            <div class="flex flex-col items-baseline gap-3 mt-6">
+              <button
+                class="text-left text-forestGreen px-4 py-2 border-2 radius-full rounded-md"
+              >
+                I'm a client looking to hire for a project
+              </button>
+              <button
+                class="text-left text-forestGreen px-4 py-2 border-2 radius-full rounded-md"
+              >
+                I'm a freelancer looking for work
+              </button>
+            </div>
+            <p
+              class="mt-8 text-[10px] md:text-[11px] text-softStoneGray lg:text-right"
+            >
+              This is a beta feature powered by OpenAI technologies.
+              <a href="#" class="underline underline-offset-1 text-forestGreen"
+                >How it works.</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- category section -->
+      <section id="category" class="p-3 md:px-8 md:py-8 xl:px-24 lg:py-8">
+        <h2 class="text-deepForestGreen font-bold text-4xl">
+          Browse talent by category
+        </h2>
+
+        <p class="text-stoneGray font-medium my-4">
+          Looking for work?
+          <a href="#" class="text-forestGreen underline underline-offset-1">
+            Browse jobs
+          </a>
+        </p>
+
+        <!-- categories -->
+        <div
+          class="flex flex-wrap md:grid md:grid-cols-2 md:mt-8 lg:grid-cols-4 gap-4 mb-8"
+        >
+          <!-- category -->
+          <div class="bg-gray-100 p-3 md:pb-10 w-full text-left">
+            <a href="#">
+              <span class="font-medium text-2xl">Development & IT</span>
+              <div class="flex gap-5 mt-2 text-lg text-gray-400">
+                <div class="flex">
+                  <img
+                    src="assets/star-icon.svg"
+                    class="w-4 mr-1"
+                    alt="star-icon"
+                  />
+                  <span>4.85/5</span>
+                </div>
+                <span>1853 skills</span>
+              </div>
+            </a>
+          </div>
+          <div class="bg-gray-100 p-3 md:pb-10 w-full text-left">
+            <a href="#">
+              <span class="font-medium text-2xl">AI Services</span>
+              <div class="flex gap-5 mt-2 text-lg text-gray-400">
+                <div class="flex">
+                  <img
+                    src="assets/star-icon.svg"
+                    class="w-4 mr-1"
+                    alt="star-icon"
+                  />
+                  <span>4.85/5</span>
+                </div>
+                <span>1853 skills</span>
+              </div>
+            </a>
+          </div>
+          <div class="bg-gray-100 p-3 md:pb-10 w-full text-left">
+            <a href="#">
+              <span class="font-medium text-2xl">Design & Creative</span>
+              <div class="flex gap-5 mt-2 text-lg text-gray-400">
+                <div class="flex">
+                  <img
+                    src="assets/star-icon.svg"
+                    class="w-4 mr-1"
+                    alt="star-icon"
+                  />
+                  <span>4.85/5</span>
+                </div>
+                <span>1853 skills</span>
+              </div>
+            </a>
+          </div>
+          <div class="bg-gray-100 p-3 md:pb-10 w-full text-left">
+            <a href="#">
+              <span class="font-medium text-2xl">Sales & Marketing</span>
+              <div class="flex gap-5 mt-2 text-lg text-gray-400">
+                <div class="flex">
+                  <img
+                    src="assets/star-icon.svg"
+                    class="w-4 mr-1"
+                    alt="star-icon"
+                  />
+                  <span>4.85/5</span>
+                </div>
+                <span>1853 skills</span>
+              </div>
+            </a>
+          </div>
+          <div class="bg-gray-100 p-3 md:pb-10 w-full text-left">
+            <a href="#">
+              <span class="font-medium text-2xl">Writing & Translation</span>
+              <div class="flex gap-5 mt-2 text-lg text-gray-400">
+                <div class="flex">
+                  <img
+                    src="assets/star-icon.svg"
+                    class="w-4 mr-1"
+                    alt="star-icon"
+                  />
+                  <span>4.85/5</span>
+                </div>
+                <span>1853 skills</span>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="bg-gray-100 p-3 md:pb-10 w-full text-left hidden md:block"
+          >
+            <a href="#">
+              <span class="font-medium text-2xl">Admin & Customer Support</span>
+              <div class="flex gap-5 mt-2 text-lg text-gray-400">
+                <div class="flex">
+                  <img
+                    src="assets/star-icon.svg"
+                    class="w-4 mr-1"
+                    alt="star-icon"
+                  />
+                  <span>4.85/5</span>
+                </div>
+                <span>1853 skills</span>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="bg-gray-100 p-3 md:pb-10 w-full text-left hidden lg:block"
+          >
+            <a href="#">
+              <span class="font-medium text-2xl">Finance & Account</span>
+              <div class="flex gap-5 mt-2 text-lg text-gray-400">
+                <div class="flex">
+                  <img
+                    src="assets/star-icon.svg"
+                    class="w-4 mr-1"
+                    alt="star-icon"
+                  />
+                  <span>4.85/5</span>
+                </div>
+                <span>1853 skills</span>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="bg-gray-100 p-3 md:pb-10 w-full text-left hidden lg:block"
+          >
+            <a href="#">
+              <span class="font-medium text-2xl"
+                >Engineering & Architecture</span
+              >
+              <div class="flex gap-5 mt-2 text-lg text-gray-400">
+                <div class="flex">
+                  <img
+                    src="assets/star-icon.svg"
+                    class="w-4 mr-1"
+                    alt="star-icon"
+                  />
+                  <span>4.85/5</span>
+                </div>
+                <span>1853 skills</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a
+          href="#"
+          class="text-forestGreen underline-offset-1 font-medium lg:hidden"
+        >
+          Show more(3)
+        </a>
+      </section>
+
+      <!-- how to hire section -->
+      <section
+        id="how-to-hire"
+        class="p-3 md:px-8 md:py-8 xl:px-24 lg:py-8 text-deepForestGreen lg:flex lg:gap-10"
+      >
+        <div class="md:mb-6 lg:flex">
+          <img
+            src="assets/how-to-hire.svg"
+            class="w-full md:rounded-xl lg:max-w-lg"
+            alt="how-to-hire-img"
+          />
+        </div>
+
+        <div>
+          <h2 class="text-4xl font-medium mb-6">
+            Up your work game, it's easy
+          </h2>
+          <div class="flex flex-col gap-6">
+            <div class="flex items-start">
+              <img
+                src="assets/edit-icon.svg"
+                alt="no-cost-to-join"
+                class="w-5 mr-4"
+              />
+              <div>
+                <h3 class="font-medium text-xl -mt-2">No cost to join</h3>
+                <p class="text-stoneGray text-sm mt-2">
+                  Register and browse professionals, explore projects, or even
+                  book a consultation.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <img
+                src="assets/pin-icon.svg"
+                alt="post-a-job-and-hire-top-talent"
+                class="w-5 mr-4"
+              />
+              <div>
+                <h3 class="font-medium text-xl -mt-2">
+                  Post a job and hire top talent
+                </h3>
+                <p class="text-stoneGray text-sm mt-2">
+                  Finding talent doesn't have to be a chore. Post a job or we
+                  can search for you!
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <img
+                src="assets/shield-icon.svg"
+                alt="edit-icon"
+                class="w-5 mr-4"
+              />
+              <div>
+                <h3 class="font-medium text-xl -mt-2">
+                  Work with the best—without breaking the bank
+                </h3>
+                <p class="text-stoneGray text-sm mt-2">
+                  Upwork makes it affordable to up your work and take advantage
+                  of low transaction rates.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-start gap-4">
+            <a
+              href="#how-to-hire"
+              class="text-white bg-darkForestGreen text-center font-medium hidden md:inline-block w-full md:w-fit md:px-6 border-2 border-darkForestGreen py-1.5 rounded-full active:scale-95 mt-10"
+              >Sign up for free</a
+            >
+            <a
+              href="#how-to-hire"
+              class="text-darkForestGreen text-center font-medium inline-block w-full md:w-fit md:px-6 border-2 border-darkForestGreen py-1.5 rounded-full active:scale-95 mt-10"
+              >Learn how to hire</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- for enterprise section -->
+      <section
+        id="for-enterprise"
+        class="mt-14 lg:mt-0 md:p-8 lg:py-4 lg:p-24 md:bg-transparent lg:flex lg:flex-row-reverse"
+      >
+        <div class="w-full lg:w-[40%] md:hidden lg:block">
+          <img
+            src="assets/enterprise-2023-md.jpg"
+            class="lg:hidden"
+            alt="enterprise"
+          />
+          <img
+            src="assets/enterprise-2023.webp"
+            class="hidden lg:block lg:object-cover lg:w-full lg:h-full lg:rounded-tr-lg lg:rounded-br-lg"
+            alt="enterprise"
+          />
+        </div>
+        <div
+          class="p-3 bg-forestGreenText md:rounded-lg lg:rounded-tr-none lg:rounded-br-none text-lg font-medium text-white md:p-8 lg:w-[60%]"
+        >
+          <div class="md:w-[60%] lg:w-full">
+            <p class="text-2xl mb-3">Enterprise Suite</p>
+            <h1 class="text-4xl lg:text-6xl font-medium">
+              This is how <br />good
+              <span class="text-forestGreenAccent"
+                >companies<br />
+                find good company.</span
+              >
+            </h1>
+            <p class="my-4 leading-6 lg:w-[84%]">
+              Access the top 1% of talent on Upwork, and a full suite of hybrid
+              workforce management tools. This is how innovation works now.
+            </p>
+
+            <div class="flex flex-col gap-3">
+              <div class="flex items-baseline gap-3">
+                <img
+                  src="assets/skills-icon.png"
+                  class="w-5"
+                  alt="skills-icon"
+                />
+                <p class="relative -top-1 leading-6">
+                  Access expert talent to fill your skill gaps
+                </p>
+              </div>
+
+              <div class="flex items-baseline gap-3">
+                <img
+                  src="assets/briefcase-icon.png"
+                  class="w-5"
+                  alt="briefcase-icon"
+                />
+                <p class="relative -top-1 leading-6">
+                  Control your workflow: hire, classify and pay your talent
+                </p>
+              </div>
+
+              <div class="flex items-baseline gap-3">
+                <img
+                  src="assets/support-icon.png"
+                  class="w-5"
+                  alt="support-icon"
+                />
+                <p class="relative -top-1 leading-6">
+                  Partner with Upwork for end-to-end support
+                </p>
+              </div>
+              <a
+                href="#how-to-hire"
+                class="text-darkForestGreen text-center text-base font-medium inline-block w-fit md:w-fit px-7 md:px-6 border-2 border-white bg-white py-1.5 rounded-full active:scale-95 mt-4"
+                >Learn more</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- for clients section -->
+      <section
+        id="for-clients"
+        class="px-3 py-5 md:px-8 md:py-8 xl:px-24 lg:py-8 mt-14 bg-forClientsMd md:bg-none bg-no-repeat bg-[length:140%] bg-top h-auto"
+      >
+        <div
+          class="text-white md:bg-forClientsMd2x md:bg-cover md:p-8 md:rounded-lg"
+        >
+          <p class="text-xl mb-28">For clients</p>
+          <div>
+            <h2 class="text-5xl lg:text-7xl font-medium mb-8">
+              Find talent <br />your way
+            </h2>
+
+            <p class="font-medium leading-5 mb-4 md:w-[60%]">
+              Work with the largest network of independent professionals and get
+              things done—from quick turnarounds to big transformations.
+            </p>
+
+            <div class="flex flex-col md:flex-row md:justify-between gap-2">
+              <a
+                href="#"
+                class="flex flex-col bg-forestGreen p-4 rounded-lg md:w-[32%] md:justify-between"
+              >
+                <span
+                  class="text-2xl lg:text-4xl font-medium mt-4 md:mt-0 mb-2 md:mb-1 leading-7"
+                  >Post a job <br />and hire a pro</span
+                >
+                <span
+                  class="flex justify-end md:justify-start text-sm lg:text-lg font-medium lg:mt-4"
+                  >Talent Marketplace
+                  <sup class="text-[6px] top-2">TM</sup>
+                  <img
+                    src="assets/right-arrow-icon.svg"
+                    alt="right-arrow"
+                    class="ml-3"
+                /></span>
+              </a>
+
+              <a
+                href="#"
+                class="flex flex-col bg-forestGreen p-4 rounded-lg md:w-[32%] md:justify-between"
+              >
+                <span
+                  class="text-2xl lg:text-4xl font-medium mt-4 md:mt-0 mb-2 md:mb-1 leading-7"
+                  >Browse and <br />buy projects</span
+                >
+                <span
+                  class="flex justify-end md:justify-start text-sm lg:text-lg font-medium lg:mt-4"
+                  >Project Catalog
+                  <sup class="text-[6px] top-2">TM</sup>
+                  <img
+                    src="assets/right-arrow-icon.svg"
+                    alt="right-arrow"
+                    class="ml-3"
+                /></span>
+              </a>
+
+              <a
+                href="#"
+                class="flex flex-col bg-forestGreen p-4 rounded-lg md:w-[32%] md:justify-between"
+              >
+                <span
+                  class="text-2xl lg:text-4xl font-medium mt-4 md:mt-0 mb-2 md:mb-1 leading-7"
+                  >Get advice from <br />and industry expert</span
+                >
+                <span
+                  class="flex justify-end md:justify-start text-sm lg:text-lg font-medium lg:mt-4"
+                  >Consultations
+                  <sup class="text-[6px] top-2">TM</sup>
+                  <img
+                    src="assets/right-arrow-icon.svg"
+                    alt="right-arrow"
+                    class="ml-3"
+                /></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- why upwork section-->
+      <section id="why-upwork" class="md:flex md:relative">
+        <div
+          class="px-3 py-5 md:px-16 md:py-8 xl:px-24 lg:py-8 flex flex-col gap-4"
+        >
+          <h2
+            class="font-medium text-4xl lg:text-6xl xl:text-7xl leading-10 my-8 text-deepForestGreen md:w-[80%]"
+          >
+            Why business turn to Upwork
+          </h2>
+          <div class="flex items-start">
+            <img
+              src="assets/star-circle-icon.svg"
+              alt="star-icon"
+              class="w-6 mr-3"
+            />
+            <div>
+              <h3
+                class="font-medium text-2xl md:text-4xl md:w-[70%] -mt-1.5 mb-1 md:mb-2 text-deepForestGreen"
+              >
+                Proof of quality
+              </h3>
+              <p class="text-base text-stoneGray md:w-[66%]">
+                Check any pro’s work samples, client reviews, and identity
+                verification.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <img
+              src="assets/dollar-circle-icon.svg"
+              alt="dollar-icon"
+              class="w-6 mr-3"
+            />
+            <div>
+              <h3
+                class="font-medium text-2xl md:text-4xl md:w-[70%] -mt-1.5 mb-1 md:mb-2 text-deepForestGreen"
+              >
+                No cost until you hire
+              </h3>
+              <p class="text-base text-stoneGray md:w-[66%]">
+                Interview potential fits for your job, negotiate rates, and only
+                pay for work you approve.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <img
+              src="assets/check-circle-icon.svg"
+              alt="dollar-icon"
+              class="w-6 mr-3"
+            />
+            <div>
+              <h3
+                class="font-medium text-2xl md:text-4xl md:w-[70%] -mt-1.5 mb-1 md:mb-2 text-deepForestGreen"
+              >
+                Safe and secure
+              </h3>
+              <p class="text-base text-stoneGray md:w-[66%]">
+                Focus on your work knowing we help protect your data and
+                privacy. We’re here with 24/7 support if you need it.
+              </p>
+            </div>
+          </div>
+
+          <img
+            src="assets/person-with-headset.webp"
+            alt="person-with-headset"
+            class="hidden md:block md:absolute w-1/3 lg:w-1/5 right-36 lg:right-[25%] xl:right-[26%] md:top-24 lg:top-18 xl:top-8"
+          />
+        </div>
+
+        <div
+          class="bg-forestGreen md:bg-transparent lg:w-[50%] text-white h-auto px-3 py-10 md:px-8 md:py-8 xl:px-24 lg:py-8"
+        >
+          <div
+            class="md:bg-forestGreen md:h-full md:p-8 md:rounded-lg md:flex md:flex-col md:justify-end"
+          >
+            <h2 class="text-3xl my-6">
+              We're<br />
+              the world's work<br />
+              marketplace
+            </h2>
+
+            <div class="flex flex-col gap-6">
+              <div class="flex items-start">
+                <img
+                  src="assets/star-icon.svg"
+                  alt="star-icon"
+                  class="w-6 mr-4"
+                />
+                <div>
+                  <h3 class="text-2xl font-medium -mt-1">4.9/5</h3>
+                  <p>Clients rate professionals on Upwork</p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <img
+                  src="assets/star-icon.svg"
+                  alt="star-icon"
+                  class="w-6 mr-4"
+                />
+                <div>
+                  <h3 class="text-2xl font-medium -mt-1">Award winner</h3>
+                  <p>G2’s 2021 Best Software Awards</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-3 py-10 flex flex-col gap-2 md:hidden">
+          <h3 class="font-medium text-4xl text-deepForestGreen">
+            Sign up to hire<br />
+            talent for any job
+          </h3>
+          <a
+            href="#how-to-hire"
+            class="text-white text-center text-base font-medium inline-block w-fit px-7 border-2 bg-darkForestGreen py-1.5 rounded-full active:scale-95 mt-4"
+            >Find talent</a
+          >
+        </div>
+      </section>
+
+      <!-- for talent section -->
+      <section
+        id="for-talent"
+        class="lg:mt-0 md:p-8 lg:py-4 lg:p-24 md:bg-transparent md:flex"
+      >
+        <div class="w-full">
+          <img
+            src="assets/find-great-work@2x.webp"
+            class="md:w-full h-full object-cover md:rounded-l-lg md:object-right-top"
+            alt="enterprise"
+          />
+        </div>
+        <div
+          class="p-3 bg-royalBlue md:rounded-lg md:rounded-l-none text-lg font-medium text-white md:p-8 md:w-[90%] xl:w-full"
+        >
+          <div>
+            <p class="text-xl mb-3 xl:mb-6">For talent</p>
+            <h2 class="text-5xl md:text-6xl xl:text-7xl xl:mb-10">
+              Find great<br />
+              work
+            </h2>
+            <p
+              class="my-4 leading-6 font-normal text-base xl:text-[18px] pb-16 xl:pb-20 xl:w-[74%]"
+            >
+              Meet clients you’re excited to work with and take your career or
+              business to new heights.
+            </p>
+            <hr class="mb-4" />
+          </div>
+
+          <div
+            class="text-base font-normal flex flex-wrap xl:flex-nowrap xl:text-[18px] gap-y-3 xl:gap-x-3 md:mb-4"
+          >
+            <span class="w-1/2 xl:w-full">
+              Find opportunities for every stage of your freelance career
+            </span>
+            <span class="w-1/2 xl:w-full"
+              >Control when, where, and how you work</span
+            >
+            <span class="w-1/2 xl:w-full">Explore different ways to earn</span>
+          </div>
+          <a
+            href="#how-to-hire"
+            class="text-royalBlue text-center text-base font-medium inline-block w-fit md:w-fit px-7 md:px-6 md:mb-4 border-2 border-white bg-white py-1.5 rounded-full active:scale-95 mt-4"
+            >Find opportunities</a
+          >
+        </div>
+      </section>
+
+      <!-- testimonials section -->
+      <section
+        id="testimonials"
+        class="px-3 py-12 md:px-8 md:py-8 xl:px-24 lg:py-8 text-deepForestGreen"
+      >
+        <h2
+          class="font-medium text-[2.6rem] md:text-6xl lg:text-7xl md:my-14 leading-10"
+        >
+          Trusted by leading <br />brands and startups
+        </h2>
+
+        <div class="mt-8 text-white flex flex-row gap-7 overflow-scroll">
+          <div
+            class="flex-col h-full w-[80%] md:min-w-[46%] min-w-[80%] p-5 bg-forestGreenText rounded-lg"
+          >
+            <img
+              src="assets/nasdaq-light.svg"
+              alt="nasdaq-logo"
+              class="max-w-[7.1rem] mx-auto lg:mx-0 lg:max-w-[199px]"
+            />
+
+            <div>
+              <h4
+                class="font-medium text-[1.2rem] lg:text-2xl lg:pr-4 leading-6 lg:leading-6 mt-3"
+              >
+                “Upwork enables us to differentiate ourselves from our
+                competitors and produce content at a higher caliber.”
+              </h4>
+              <p class="mt-3 xl:mb-10">Josh Machiz, Chief Digital Officer</p>
+              <p>Result</p>
+              <hr class="my-2" />
+            </div>
+
+            <div class="flex flex-col xl:flex-row">
+              <div class="pr-4">
+                <h4 class="font-medium text-3xl mb-2">Emmy Winning</h4>
+                <p class="leading-5 xl:pr-10">Facebook Watch program</p>
+              </div>
+              <div class="pr-6 mt-2 xl:mt-0">
+                <h4 class="font-medium text-3xl mb-2">Millions</h4>
+                <p class="leading-5">
+                  of impressions generated per client per IPO
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex-col lh-full w-[80%] md:min-w-[46%] md:w-[50%] min-w-[80%] p-5 bg-burntOrange rounded-lg"
+          >
+            <img
+              src="assets/microsoft-lg-light.svg"
+              alt="nasdaq-logo"
+              class="max-w-[7.1rem] mx-auto lg:mx-0 lg:max-w-[199px]"
+            />
+
+            <div>
+              <h4
+                class="font-medium text-[1.2rem] lg:text-2xl lg:pr-4 leading-6 lg:leading-6 mt-3"
+              >
+                “One of the advantages of utilizing freelancers is finding
+                talent with different skills quickly as our needs change.”
+              </h4>
+              <p class="mt-3 xl:mb-14">
+                Carol Taylor, Director of Content Experience
+              </p>
+              <p class="">Result</p>
+              <hr class="my-2" />
+            </div>
+
+            <div class="flex xl:gap-14">
+              <div class="pr-4">
+                <h4 class="font-medium text-3xl mb-2">50% Faster</h4>
+                <p class="leading-5">launch of projects</p>
+              </div>
+              <div class="pr-4 mt-2 xl:mt-0">
+                <h4 class="font-medium text-3xl mb-2">10,000</h4>
+                <p class="leading-5">projects completed</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex-col lh-full w-[80%] md:min-w-[46%] md:w-[50%] min-w-[80%] p-5 bg-deepForestGreen rounded-lg"
+          >
+            <div
+              class="flex flex-col h-full items-center xl:items-start justify-evenly"
+            >
+              <span class="text-xl">And many more</span>
+              <img
+                src="assets/nasdaq-light.svg"
+                alt="nasdaq"
+                class="max-w-[92px]"
+              />
+              <img src="assets/automattic-light.svg" alt="automattic" />
+              <img src="assets/bissell-light.svg" alt="bissell" />
+              <img src="assets/coty-light.svg" alt="coty" />
+              <img src="assets/rancher-v2-light.svg" alt="rancher" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- help-ukraine section -->
+      <section
+        id="help-ukraine"
+        class="px-3 py-12 md:px-8 md:py-8 xl:px-24 lg:py-8 text-deepForestGreen"
+      >
+        <div
+          class="bg-[#F7FAF7] h-2/5 p-6 bg-ukraine bg-no-repeat bg-[length:125px] lg:bg-[length:202px] bg-right-bottom md:bg-right-top lg:bg-right"
+        >
+          <h2 class="font-medium text-[1.7rem] mb-2 md:text-4xl md:mb-3">
+            We support Ukraine
+          </h2>
+          <h6
+            class="text-[1.2rem] mb-4 leading-6 text-stoneGray md:w-[60%] xl:w-[100%]"
+          >
+            We are taking action to help our freelancers, our clients, and the
+            people of Ukraine—and so can you.
+          </h6>
+          <a
+            href="#how-to-hire"
+            class="text-darkForestGreen text-center text-base font-medium inline-block w-fit md:w-fit px-7 md:px-6 border-2 border-darkForestGreen bg-white py-1.5 rounded-full active:scale-95 mt-4"
+            >Learn more</a
+          >
+        </div>
+      </section>
+
+      <!-- skills list section -->
+      <section
+        id="skills-list"
+        class="px-3 py-12 md:px-8 md:py-8 md:flex md:flex-row md:items-baseline md:justify-between xl:justify-start md:gap-x-10 xl:gap-x-40 xl:px-24 lg:py-8"
+      >
+        <div
+          class="flex flex-row md:flex-col md:items-baseline gap-x-4 md:gap-y-5 overflow-scroll md:overflow-visible text-softerGray font-medium text-2xl md:text-3xl whitespace-nowrap"
+        >
+          <button class="text-forestGreen">Tops skills</button>
+          <button>Trending skills</button>
+          <button>Top skills in US</button>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-2 lg:flex lg:row-col xl:gap-x-40 md:gap-x-10 md:text-[22px] mt-10 text-stoneGray md:whitespace-nowrap"
+        >
+          <div>
+            <ul class="flex flex-col gap-3">
+              <li class="skill">Generative AI Specialists</li>
+              <li class="skill">Data Entry Specialists</li>
+              <li class="skill">Video Editors</li>
+              <li class="skill">Data Analyst</li>
+              <li class="skill">Shopify Developer</li>
+              <li class="skill">Ruby on Rails Developer</li>
+              <li class="skill">Android Developer</li>
+              <li class="skill">Bookkeeper</li>
+              <li class="skill">Content Writer</li>
+              <li class="skill">Copywriter</li>
+              <li class="skill">Data Scientist</li>
+              <li class="skill">Front-End Developer</li>
+              <li class="skill">Game Developer</li>
+              <li class="skill">Graphic Designer</li>
+              <li class="skill">iOS Developer</li>
+              <li class="skill">Java Developer</li>
+            </ul>
+          </div>
+
+          <div>
+            <ul class="flex flex-col gap-3">
+              <li>JavaScript Developer</li>
+              <li>Logo Designer</li>
+              <li>Mobile App Developer</li>
+              <li>PHP Developer</li>
+              <li>Python Developer</li>
+              <li>Resume Writer</li>
+              <li>SEO Expert</li>
+              <li>Social Media Manager</li>
+              <li>Software Developer</li>
+              <li>Software Engineer</li>
+              <li>Technical Writer</li>
+              <li>UI Designer</li>
+              <li>UX Designer</li>
+              <li>Virtual Assistant</li>
+              <li>Web Designer</li>
+              <li>Wordpress Developer</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer" class="p-3 md:px-8 md:py-8 lg:py-8">
+      <div
+        class="bg-deepForestGreen text-white px-3 pt-3 pb-8 md:px-10 md:pt-10 md:pb-6 lg:py-20 rounded-lg"
+      >
+        <nav class="mb-6">
+          <ul class="md:flex md:justify-between md:gap-8">
+            <li class="border-b-2 border-stoneGray md:border-0">
+              <button class="flex w-full justify-between py-6 md:cursor-text">
+                For Clients
+                <img
+                  src="assets/arrow-down2x.svg"
+                  alt="arrow-down2x"
+                  class="w-5 md:hidden"
+                />
+              </button>
+
+              <ul
+                class="ml-4 md:ml-0 text-sm flex-col gap-4 mb-10 hidden md:flex"
+              >
+                <li><a href="#" class="hover-underline">How to Hire</a></li>
+                <li>
+                  <a href="#" class="hover-underline">Talent Marketplace</a>
+                </li>
+                <li><a href="#" class="hover-underline">Project Catalog</a></li>
+                <li><a href="#" class="hover-underline">Hire an Agency</a></li>
+                <li><a href="#" class="hover-underline">Enterprise</a></li>
+                <li><a href="#" class="hover-underline">Any Hire</a></li>
+                <li>
+                  <a href="#" class="hover-underline">Contract-to-Hire</a>
+                </li>
+                <li>
+                  <a href="#" class="hover-underline">Direct Contracts</a>
+                </li>
+                <li><a href="#" class="hover-underline">Hire Worldwide</a></li>
+                <li><a href="#" class="hover-underline">Hire in the USA</a></li>
+              </ul>
+            </li>
+            <li class="border-b-2 border-stoneGray md:border-0">
+              <button class="flex w-full justify-between py-6 md:cursor-text">
+                For Talent
+                <img
+                  src="assets/arrow-down2x.svg"
+                  alt="arrow-down2x"
+                  class="w-5 md:hidden"
+                />
+              </button>
+
+              <ul
+                class="ml-4 md:ml-0 text-sm flex-col gap-4 mb-10 hidden md:flex"
+              >
+                <li>
+                  <a href="#" class="hover-underline">How to Find Work</a>
+                </li>
+                <li>
+                  <a href="#" class="hover-underline">Direct Contracts</a>
+                </li>
+                <li>
+                  <a href="#" class="hover-underline"
+                    >Find Freelance Jobs Worldwide</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover-underline"
+                    >Find Freelance Jobs in the USA</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="border-b-2 border-stoneGray md:border-0">
+              <button class="flex w-full justify-between py-6 md:cursor-text">
+                Resources
+                <img
+                  src="assets/arrow-down2x.svg"
+                  alt="arrow-down2x"
+                  class="w-5 md:hidden"
+                />
+              </button>
+
+              <ul
+                class="ml-4 md:ml-0 text-sm flex-col gap-4 mb-10 hidden md:flex"
+              >
+                <li><a href="#" class="hover-underline">Help & Support</a></li>
+                <li><a href="#" class="hover-underline">Success Stories</a></li>
+                <li><a href="#" class="hover-underline">Upwork Reviews</a></li>
+                <li><a href="#" class="hover-underline">Resources</a></li>
+                <li><a href="#" class="hover-underline">Blog</a></li>
+                <li><a href="#" class="hover-underline">Community</a></li>
+                <li>
+                  <a href="#" class="hover-underline">Affiliate Program</a>
+                </li>
+                <li>
+                  <a href="#" class="hover-underline">Free Business Tools</a>
+                </li>
+              </ul>
+            </li>
+            <li class="border-b-2 border-stoneGray md:border-0">
+              <button class="flex w-full justify-between py-6 md:cursor-text">
+                Company
+                <img
+                  src="assets/arrow-down2x.svg"
+                  alt="arrow-down2x"
+                  class="w-5 md:hidden"
+                />
+              </button>
+
+              <ul
+                class="ml-4 md:ml-0 text-sm flex-col gap-4 mb-10 hidden md:flex"
+              >
+                <li><a href="#" class="hover-underline">About Us</a></li>
+                <li><a href="#" class="hover-underline">Leadership</a></li>
+                <li>
+                  <a href="#" class="hover-underline">Investor Relations</a>
+                </li>
+                <li><a href="#" class="hover-underline">Careers</a></li>
+                <li><a href="#" class="hover-underline">Our Impact</a></li>
+                <li><a href="#" class="hover-underline">Press</a></li>
+                <li><a href="#" class="hover-underline">Contact Us</a></li>
+                <li>
+                  <a href="#" class="hover-underline"
+                    >Trust, Safety & Security</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover-underline"
+                    >Modern Slavery Statement</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div
+          class="border-b-2 pb-4 lg:pb-2 border-stoneGray md:flex md:justify-between"
+        >
+          <div class="mb-3 lg:mb-0 md:flex md:gap-x-4">
+            <p class="py-3 text-sm font-medium">Follow Us</p>
+            <ul class="flex gap-2">
+              <li>
+                <a
+                  href="#"
+                  class="inline-block p-1.5 rounded-full border-2 border-white hover:bg-slate-400"
+                >
+                  <img src="assets/facebook.svg" alt="facebook" class="w-6" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="inline-block p-1.5 rounded-full border-2 border-white hover:bg-slate-400"
+                >
+                  <img src="assets/linkdn.svg" alt="linkdn" class="w-6" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="inline-block p-1.5 rounded-full border-2 border-white hover:bg-slate-400"
+                >
+                  <img src="assets/x.svg" alt="x" class="w-6" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="inline-block p-1.5 rounded-full border-2 border-white hover:bg-slate-400"
+                >
+                  <img src="assets/youtube.svg" alt="youtube" class="w-6" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="inline-block p-1.5 rounded-full border-2 border-white hover:bg-slate-400"
+                >
+                  <img src="assets/instagram.svg" alt="instagram" class="w-6" />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mb-3 lg:mb-0 md:flex md:gap-x-4">
+            <p class="py-3 text-sm font-medium">Mobile app</p>
+            <ul class="flex gap-2">
+              <li>
+                <a
+                  href="#"
+                  class="inline-block p-1.5 rounded-full border-2 border-white hover:bg-slate-400"
+                >
+                  <img src="assets/apple.svg" alt="apple" class="w-6" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="inline-block p-1.5 rounded-full border-2 border-white hover:bg-slate-400"
+                >
+                  <img src="assets/android.svg" alt="android" class="w-6" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="text-sm md:flex md:justify-between md:gap-6 md:pt-3 lg:justify-start lg:gap-x-11"
+        >
+          <p class="py-6 md:py-0 font-medium">
+            © 2015 - 2024 Upwork® Global Inc.
+          </p>
+          <ul
+            class="flex flex-col gap-4 md:gap-3 md:grid md:grid-cols-3 lg:flex lg:flex-row"
+          >
+            <li><a href="#" class="hover-underline">Terms of Service</a></li>
+            <li><a href="#" class="hover-underline">Privacy Policy</a></li>
+            <li>
+              <a href="#" class="hover-underline">CA Notice at Collection</a>
+            </li>
+            <li><a href="#" class="hover-underline">Cookie Settings</a></li>
+            <li><a href="#" class="hover-underline">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/main.js"></script>
+  </body>
+</html>

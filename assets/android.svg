@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   fill="none"
+   aria-hidden="true"
+   viewBox="0 0 24 24"
+   role="img"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="android.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata14">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     id="namedview10"
+     showgrid="false"
+     inkscape:zoom="9.8333333"
+     inkscape:cx="-0.40677966"
+     inkscape:cy="12"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <path
+     fill="var(--icon-color, #001e00)"
+     vector-effect="non-scaling-stroke"
+     stroke="var(--icon-color, #001e00)"
+     stroke-miterlimit="10"
+     stroke-width=".4"
+     d="M9.893 6.726a.44.44 0 100-.88.44.44 0 000 .88zm3.522 0a.44.44 0 100-.88.44.44 0 000 .88z"
+     id="path2"
+     style="stroke:#ffffff" />
+  <path
+     vector-effect="non-scaling-stroke"
+     stroke="var(--icon-color, #001e00)"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="1.5"
+     d="M11.656 3.83a5 5 0 00-5.23 4.82h10.46a5 5 0 00-5.23-4.82zm-2.501.58L8.375 3m5.791 1.41l.77-1.41"
+     id="path4"
+     style="stroke:#ffffff" />
+  <path
+     vector-effect="non-scaling-stroke"
+     stroke="var(--icon-color, #001e00)"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     stroke-width="1.5"
+     d="M16.896 8.648H6.426v9.2h10.47v-9.2zM4 8.648v6.3m15.314-6.3v6.3M9.57 17.85V21m4.174-3.15V21"
+     id="path6"
+     style="stroke:#ffffff" />
+</svg>

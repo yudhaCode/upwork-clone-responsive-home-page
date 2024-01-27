@@ -1,0 +1,81 @@
+/* hamburger menu */
+.hamburger {
+  border: none;
+  background-color: transparent;
+}
+.hamburger.-active .hamburger__line {
+  background-color: transparent;
+}
+.hamburger.-active .hamburger__line::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.hamburger.-active .hamburger__line::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.hamburger__line {
+  display: block;
+  height: 2px;
+  transform: translateX(-50%);
+  width: 22px;
+  background-color: #172e59;
+  transition: 0.4s;
+}
+.hamburger__line:before,
+.hamburger__line:after {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background-color: #172e59;
+  transition: inherit;
+}
+.hamburger__line:before {
+  top: -6px;
+}
+.hamburger__line:after {
+  top: 6px;
+}
+
+/* chatbot section */
+.chatbot-bg {
+  position: relative;
+  align-items: flex-start; /* Menggunakan align-items untuk mengatur penempatan konten */
+  background: #91e6b3;
+  background: linear-gradient(
+    100deg,
+    #aceace,
+    #48e1cf,
+    #cf9dbb,
+    #70e4ce,
+    #88e4c5
+  );
+  background-size: 200% 200%;
+  animation: gradientAnimation-eaa3ceac 8s ease-out infinite;
+  animation-direction: alternate;
+  border-radius: 24px;
+}
+
+@keyframes gradientAnimation-eaa3ceac {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+/* box-shadow-cstm */
+.box-shadow-cstm {
+  -webkit-box-shadow: 1px -2px 5px 0px rgba(173, 173, 173, 1);
+  -moz-box-shadow: 1px -2px 5px 0px rgba(173, 173, 173, 1);
+  box-shadow: 1px -2px 5px 0px rgba(173, 173, 173, 1);
+}
